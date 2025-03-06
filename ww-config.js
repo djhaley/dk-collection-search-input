@@ -4,7 +4,7 @@ export default {
         exclude: ['text'],
     },
     editor: {
-        label: { en: 'Form Input', fr: 'Entrée de Formulaire' },
+        label: { en: 'DK Input' },
         icon: 'text-input',
         customSettingsPropertiesOrder: [
             'formInfobox',
@@ -56,6 +56,8 @@ export default {
         { name: 'change', label: { en: 'On change' }, event: { value: '' }, default: true },
         { name: 'initValueChange', label: { en: 'On init value change' }, event: { value: '' } },
         { name: 'onEnterKey', label: { en: 'On enter key' }, event: { value: '' } },
+        { name: 'onDownKey', label: { en: 'On down key' }, event: { value: '' } },
+        { name: 'onUpKey', label: { en: 'On up key' }, event: { value: '' } },
         { name: 'focus', label: { en: 'On focus' }, event: null },
         { name: 'blur', label: { en: 'On blur' }, event: null },
     ],

@@ -9,6 +9,8 @@
         @blur="onBlur"
         @focus="isReallyFocused = true"
         @keyup.enter="onEnter"
+        @keydown.down="onDownKey"
+        @keydown.up="onUpKey"
     />
     <textarea
         v-else
@@ -135,6 +137,14 @@ export default {
             emit('trigger-event', { name: 'onEnterKey', event: { value: variableValue.value } });
         }
 
+        function onDownKey() {
+            emit('trigger-event', { name: 'onDownKey', event: { value: variableValue.value } });
+        }
+
+        function onUpKey() {
+            emit('trigger-event', { name: 'onUpKey', event: { value: variableValue.value } });
+        }
+
         watch(
             () => props.content.value,
             v => {
@@ -166,6 +176,8 @@ export default {
             textareaBindings,
             inputClasses,
             onEnter,
+            onDownKey,
+            onUpKey
         };
     },
 };
