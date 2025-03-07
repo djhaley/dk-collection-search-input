@@ -137,12 +137,16 @@ export default {
             emit('trigger-event', { name: 'onEnterKey', event: { value: variableValue.value } });
         }
 
-        function onDownKey() {
+        function onDownKey(event) {
             emit('trigger-event', { name: 'onDownKey', event: { value: variableValue.value } });
+            event.preventDefault();
+            event.stopPropagation();
         }
 
-        function onUpKey() {
+        function onUpKey(event) {
             emit('trigger-event', { name: 'onUpKey', event: { value: variableValue.value } });
+            event.preventDefault();
+            event.stopPropagation();
         }
 
         watch(
